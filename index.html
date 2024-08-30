@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora de Preço</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="calculator">
+      <div class="header">
+        <div>
+          <h1>📊 Calculadora de Preço</h1>
+          <p>Estime o preço do seu projeto de programação</p>
+        </div>
+        <div class="toggle-container">
+          <span>🌙</span>
+          <label class="toggle">
+            <input type="checkbox" id="darkModeToggle" />
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div>
+      <div class="content">
+        <div class="form-group">
+          <label for="hours">Horas Estimadas</label>
+          <input type="number" id="hours" placeholder="Ex: 40" />
+          <div class="error-message" id="hoursError"></div>
+        </div>
+        <div class="form-group">
+          <label for="rate">Taxa Horária (R$)</label>
+          <input type="text" id="rate" placeholder="Ex: 100" />
+          <div class="error-message" id="rateError"></div>
+        </div>
+        <div class="form-group">
+          <label for="complexity">Fator de Complexidade</label>
+          <div class="complexity-container">
+            <input
+              type="range"
+              id="complexity"
+              min="1"
+              max="5"
+              step="1"
+              value="1"
+            />
+            <span id="complexityValue">1</span>
+          </div>
+          <div class="complexity-labels">
+            <span>Simples</span>
+            <span>Complexo</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="additional">Custos Adicionais (R$)</label>
+          <input type="text" id="additional" placeholder="Ex: 500" />
+          <div class="error-message" id="additionalError"></div>
+        </div>
+        <button onclick="calculatePrice()">Calcular Preço</button>
+        <div id="result"></div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
